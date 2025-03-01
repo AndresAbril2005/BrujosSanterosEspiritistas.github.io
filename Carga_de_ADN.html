@@ -1,0 +1,72 @@
+<!-- Carga de ADN - Animación de carga con redirección -->
+
+<dna>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+  <div class="item"><div class="left"></div><div class="right"></div></div>
+</dna>
+
+<style>
+  /* Estilos y animaciones */
+  dna {
+      display: flex;
+      gap: 0.25rem;
+      transform: rotate3d(0, 0, 1, -60deg);
+      animation: dna 3s ease;
+  }
+
+  .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 1rem;
+  }
+
+  .left, .right {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      position: relative;
+  }
+
+  .left {
+      background: #ff554d;
+      animation: left 2s linear infinite;
+  }
+
+  .right {
+      background: #3d6eb3;
+      animation: right 2s linear infinite;
+  }
+
+  @keyframes left {
+      from { transform: translateY(0) scale(0.5); }
+      50% { transform: translateY(220%) scale(0.5); }
+      to { transform: translateY(0) scale(0.5); }
+  }
+
+  @keyframes right {
+      from { transform: translateY(0) scale(0.5); }
+      50% { transform: translateY(-220%) scale(0.5); }
+      to { transform: translateY(0) scale(0.5); }
+  }
+
+  body {
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      background: black;
+      color: #3d6eb3;
+  }
+</style>
+
+<script>
+  setTimeout(() => {
+      window.location.href = 'estrellas.html'; // Redirige después de 3 segundos
+  }, 3000);
+</script>
